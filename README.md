@@ -1,0 +1,2 @@
+# Vagrant
+My Vagrant files
