@@ -1,2 +1,2 @@
 # Vagrant
-My Vagrant files
+My Vagrant files - based on VMWare Fusion boxes. 
