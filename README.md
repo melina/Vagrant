@@ -42,3 +42,23 @@ My Vagrant files
 - `vagrant provision --debug`     -- use the debug flag to increase the verbosity of the output
 - `vagrant push`                  -- to [deploy code](http://docs.vagrantup.com/v2/push/index.html)!
 - `vagrant up --provision | tee provision.log`  -- Runs `vagrant up`, forces provisioning and logs all output to a file
+
+
+## Issues
+
+```
+Vagrant was unable to mount VirtualBox shared folders. This is usually
+because the filesystem "vboxsf" is not available. This filesystem is
+made available via the VirtualBox Guest Additions and kernel module.
+Please verify that these guest additions are properly installed in the
+guest. This is not a bug in Vagrant and is usually caused by a faulty
+Vagrant box. For context, the command attempted was:
+
+mount -t vboxsf -o uid=1000,gid=1000 srv_iac /srv/iac
+
+The error output from the command was:
+
+mount: unknown filesystem type 'vboxsf'
+```
+
+Solution: `vagrant plugin install vagrant-vbguest` 
